@@ -252,7 +252,9 @@ const Field = () => {
                 setField(undefined);
                 setErrorVisible(true);
             });
+    }, []);
 
+    useEffect(() => {
         if (field) {
             fetch(`${import.meta.env.VITE_API_URL}/owners/${field.owner_id}`, {
                 method: "GET",
@@ -263,17 +265,17 @@ const Field = () => {
                             setOwner(data);
                         });
                     } else if (response.status === 404) {
-                        setField(undefined);
+                        setOwner(undefined);
                         setErrorMessage("Owner not found.");
                         setErrorVisible(true);
                     }
                 })
                 .catch(() => {
-                    setField(undefined);
+                    setOwner(undefined);
                     setErrorVisible(true);
                 });
         }
-    }, []);
+    }, [field]);
 
     useEffect(() => {
         if (field) {
