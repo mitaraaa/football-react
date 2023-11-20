@@ -1,0 +1,74 @@
+@use "./assets/font/GTWalsheimPro.css";
+
+* {
+    font-family: "GT Walsheim Pro", sans-serif;
+}
+
+html {
+    width: calc(100vw - (100vw - 100%));
+    margin: 0;
+    padding: 0;
+    background: var(--material-theme-sys-light-surface, #FBF8FD);
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    align-self: stretch;
+
+    padding: 32px 128px;
+
+    span {
+        font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        line-height: 100%; /* 12px */
+        color: #000;
+    }
+
+    a {
+        cursor: pointer;
+
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        line-height: 100%; /* 12px */
+        color: #000;
+        text-decoration: none;
+
+        opacity: 0.6;
+        outline: none;
+
+        transition: 100ms;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:focus {
+            text-decoration: underline;
+            opacity: 1;
+        }
+    }
+}
+
+.material-symbols-outlined {
+    user-select: none;
+}
